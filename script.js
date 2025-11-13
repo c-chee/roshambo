@@ -48,6 +48,7 @@ function startGame(){
 
     const moves = ['ROCK', 'PAPER', 'SCISSOR']
 
+    
 
     if (moves.includes(player)){
         console.log('User input validated.');
