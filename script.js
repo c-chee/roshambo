@@ -68,9 +68,7 @@ function startGame(){
         if ((player === 'ROCK' && computer === 'PAPER') ||
             (player === 'PAPER' && computer === 'SCISSOR') ||
             (player === 'SCISSOR' && computer === 'ROCK')){
-                // errorMessage.style.display = 'none';
-                // displayTie.style.display = 'none';
-                // displayWin.style.display = 'none';
+
                 displayLose.style.display = 'block'; // Lose
 
                 console.log('You Lose!')
@@ -81,9 +79,6 @@ function startGame(){
                  (player === 'PAPER' && computer === 'ROCK') ||
                  (player === 'SCISSOR' && computer === 'PAPER')){
                     
-                    // errorMessage.style.display = 'none';
-                    // displayTie.style.display = 'none';
-                    // displayLose.style.display = 'none';
                     displayWin.style.display = 'block'; //Win
 
                     console.log('You Win!');
@@ -91,9 +86,7 @@ function startGame(){
         }
         // Else, User and Computer equals
         else {
-            // errorMessage.style.display = 'none';
-            // displayLose.style.display = 'none';
-            // displayWin.style.display = 'none';
+
             displayTie.style.display = 'block'; //Tie
 
             console.log('Tie!');
