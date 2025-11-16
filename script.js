@@ -62,6 +62,24 @@ const loseMessage = document.getElementById('displayLose');
 const tieMessage = document.getElementById('displayTie');
 const errorMessage = document.getElementById('displayError');
 
+
+// === Game Round Reset ===
+// Added for easier game play, clears moves selections automatically after each round
+function resetRound() {
+    setTimeout(() => {
+        // resets the ccomputer to thinking
+        computerMoveDisplay.innerHTML = '...';
+
+        // Clears wiin/lose messsages
+        winMessage.style.display = 'none';
+        loseMessage.style.display = 'none';
+        tieMessage.style.display = 'none';
+        errorMessage.style.display = 'none';
+
+        console.log("Selections reset.");
+    }, 2000); // 2 seconds
+}
+
 // ===== Logic function ======
 function logicCondition() {
 
@@ -97,6 +115,8 @@ function logicCondition() {
                 playerScoreDisplay.innerHTML = `Player: ${playerScore}`;
                 computerScoreDisplay.innerHTML = `Computer: ${computerScore}`;
 
+                resetRound()
+
         }
         // --- Player Win Conditios ---
         else if ((player === 'ROCK' && computer === 'SCISSOR') ||
@@ -113,6 +133,8 @@ function logicCondition() {
                     // Update Score
                     playerScoreDisplay.innerHTML = `Player: ${playerScore}`;
                     computerScoreDisplay.innerHTML = `Computer: ${computerScore}`;
+
+                    resetRound()
 
         }
         // --- Tie Conddition ---
@@ -132,6 +154,8 @@ function logicCondition() {
 
         // Clears input field
         input.value = '';
+
+        resetRound()
 
     }
     // --- Else if Player doesn't have a valid move ---
@@ -153,7 +177,9 @@ function logicCondition() {
         // Sends/ update the score count
         playerScoreDisplay.innerHTML = `Player: ${playerScore}`;
         computerScoreDisplay.innerHTML = `Computer: ${computerScore}`;
+
     }
+
 }
 
 // ==== Button Moves Selection ====
