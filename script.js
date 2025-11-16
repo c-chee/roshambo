@@ -56,7 +56,7 @@ let computerMoveDisplay = document.getElementById('displayComputerMove');
 //Array containg the moves
 const moves = ['ROCK', 'PAPER', 'SCISSOR'];
 const patrickMoves = ['ROCK', 'PAPER'];
-const mrcrabsMoves = ['ROCK', 'PAPER'];
+const mrcrabsMoves = ['SCISSOR'];
 
 
 // Messsages to be displayed under certain conditions
@@ -372,4 +372,116 @@ function startPatrickGame(){
     
 }
 
+// === Mr. Crabs Mode ===
+function mrCrabsCondition() {
 
+    // --- If Player has a valid move ---
+    // Validates the players move. Check and see if it is one of the 3 in the moves array.
+    if (mrcrabsMoves.includes(player)){
+        console.log('User input validated.');
+
+        // Randomization for computer move from move array
+        computer = moves[Math.floor(Math.random() * moves.length)]
+        console.log('Computers Move: ' + computer); 
+
+        // Clear win/lose displays initially
+        winMessage.style.display = 'none';
+        loseMessage.style.display = 'none';
+        tieMessage.style.display = 'none';
+        errorMessage.style.display = 'none';
+
+
+        // --- Player Lose Conditions ---
+        if ((player === 'ROCK' && computer === 'PAPER') ||
+            (player === 'PAPER' && computer === 'SCISSOR') ||
+            (player === 'SCISSOR' && computer === 'ROCK')){
+
+                computerMoveDisplay.innerHTML = `${computer}`; // Displays computer move
+
+                loseMessage.style.display = 'block'; // Lose Message
+                console.log('You Lose!');
+
+                computerScore++ // Computer gets a point
+
+                // Update Score
+                playerScoreDisplay.innerHTML = `Player: ${playerScore}`;
+                computerScoreDisplay.innerHTML = `Computer: ${computerScore}`;
+
+                resetRound()
+
+        }
+        // --- Player Win Conditios ---
+        else if ((player === 'ROCK' && computer === 'SCISSOR') ||
+                 (player === 'PAPER' && computer === 'ROCK') ||
+                 (player === 'SCISSOR' && computer === 'PAPER')){
+
+                    computerMoveDisplay.innerHTML = `${computer}`; // Displays computer move
+                    
+                    winMessage.style.display = 'block'; //Win Message
+                    console.log('You Win!');
+
+                    playerScore++; // Player gets a point
+
+                    // Update Score
+                    playerScoreDisplay.innerHTML = `Player: ${playerScore}`;
+                    computerScoreDisplay.innerHTML = `Computer: ${computerScore}`;
+
+                    resetRound()
+
+        }
+        // --- Tie Conddition ---
+        // Else, User and Computer equals
+        else {
+
+            computerMoveDisplay.innerHTML = `${computer}`; // Displays computer move
+
+            tieMessage.style.display = 'block'; // Tie Message
+            console.log('Tie!');
+
+            // Update Score, no points
+            playerScoreDisplay.innerHTML = `Player: ${playerScore}`;
+            computerScoreDisplay.innerHTML = `Computer: ${computerScore}`;
+
+        }
+
+        // Clears input field
+        input.value = '';
+
+        resetRound()
+
+    }
+    // --- Else if Player doesn't have a valid move ---
+    else { 
+        // clears any other messages in screen
+        loseMessage.style.display = 'none';
+        winMessage.style.display = 'none';
+        tieMessage.style.display = 'none';
+        errorMessage.style.display = 'block';
+
+        // Clears input fiels
+        input.value = '';
+
+        // Error Messsage
+        errorMessage.style.display = 'block';
+        console.log('Not a valid move!');
+        console.log('Enter a valid move (ROCK, PAPER, or SCISSOR)');
+
+        // Sends/ update the score count
+        playerScoreDisplay.innerHTML = `Player: ${playerScore}`;
+        computerScoreDisplay.innerHTML = `Computer: ${computerScore}`;
+
+    }
+
+}
+
+function startMrCrabsGame(){
+
+    player = document.getElementById('userInput').value.toUpperCase(); //Grab users input and changes values to upper case
+    console.log('Users Move: ' + player); //Checks to see input was grabbed
+
+    input = document.getElementById('userInput'); //Set the input value from user to input
+ 
+    //call logic condition
+    mrCrabsCondition()
+    
+}

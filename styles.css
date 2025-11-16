@@ -238,6 +238,7 @@ main {
     padding: 10px 40px;
     text-decoration: none;
     margin-bottom: 1em;
+    width: 100px;
 }
 
 .mode-btn:hover{

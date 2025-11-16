@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+    <meta charset = 'UTF-8'>
+    <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0'>
+    <title>Roshambo - Mr. Crabs</title>
+
+    <!-- Font -->
+    <link rel = 'preconnect' href = 'https://fonts.googleapis.com'>
+    <link rel = 'preconnect' href = 'https://fonts.gstatic.com' crossorigin>
+    <link href = 'https://fonts.googleapis.com/css2?family=Lexend+Tera:wght@100..900&display=swap' rel = 'stylesheet'>
+
+    <!-- CSS Link -->
+    <link rel = 'stylesheet' href = 'styles.css'>
+
+</head>
+<body>
+    <!-- JS Link -->
+    <script src = 'script.js' defer></script>
+
+    <!-- Home -->
+    <a class = "back-home" href = 'index.html'>HOME</a>
+    
+    <!-- Computer and Score Board-->
+    <section class = 'computer-score-container'>
+        <section class = 'character-img karen'>
+            <img src = 'karen.webp' alt = 'Karen Computer'>
+        </section>
+
+        <section class = 'displayComputer'>
+            <h4 class = 'computer-title'>Computers Move: </h4>
+            <h4 id = 'displayComputerMove' class = 'computerMove'>...</h4>
+        </section>
+
+        <!-- Score Board -->
+        <section class = 'score-board'>
+            <p id = 'displayPlayerScore'>Player: 0</p>
+            <p id = 'displayComputerScore'>Computer: 0</p>
+
+            <!-- Reset -->
+            <button id = 'reset-btn' onclick = 'resetScore()'>RESET</button>
+        </section>
+
+    </section>
+
+    <!-- Win Lose Message -->
+    <section class = 'message-board'>
+        <p id = 'displayWin' class = 'gameResult win'>YOU WIN!</p>
+        <p id = 'displayLose' class = 'gameResult lose'>YOU LOSE!</p>
+        <p id = 'displayTie' class = 'gameResult tie'>TIE!</p>
+    </section>
+
+    <!-- Player -->
+    <section class = 'player-container'>
+
+        <section class = 'character-img spongebob'>
+            <img src = 'mr_crabs.png' alt = 'Patrick Star'>
+        </section>
+
+        <section>
+            <h3>- Mr. Crabs -</h3>
+            <h4>Select or Enter your move:</h4>
+
+            <!-- Move Selection Buttons -->
+            <div class = 'moves-container'>
+                <button id = 'scissor-btn' class = 'moves scissor' onclick = 'scissor()'>SCISSOR</button>
+            </div>
+
+            <!-- Move Input -->
+            <div class = 'input-container'>
+                <div class = 'text-box'>
+                    <input id = 'userInput' class = 'player-input-box' type = 'text' placeholder = 'Enter Your Move'>
+                    <p id = 'displayError' class = 'errorMessage'>Enter a valid move (SCISSORS)</p>
+                </div>
+
+                <button id = 'go-btn' onclick = 'startMrCrabsGame()'>GO</button>
+            </div>
+
+        </section>
+
+    </section>
+
+</body>
+</html>
