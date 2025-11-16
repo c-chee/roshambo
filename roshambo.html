@@ -5,6 +5,11 @@
     <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0'>
     <title>Roshambo</title>
 
+    <!-- Font -->
+    <link rel = 'preconnect' href = 'https://fonts.googleapis.com'>
+    <link rel = 'preconnect' href = 'https://fonts.gstatic.com' crossorigin>
+    <link href = 'https://fonts.googleapis.com/css2?family=Lexend+Tera:wght@100..900&display=swap' rel = 'stylesheet'>
+
     <!-- CSS Link -->
     <link rel = 'stylesheet' href = 'styles.css'>
 
@@ -15,38 +20,61 @@
     
     <!-- Computer -->
     <section>
-        <!-- Comouters Choice -->
-        <p></p>
+        <div>
+
+        </div>
+
+        <div>
+            <h4 id = 'displayComputerMove' class = 'computerMove'>Computers Move: </h4>
+        </div>
     </section>
 
-
-    <!-- Player -->
+    <!-- Score Board -->
     <section>
-        <!-- Player Input -->
-        <h4>Enter your move:</h4>
+        <p id = 'displayPlayerScore'>Player: 0</p>
+        <p id = 'displayComputerScore'>Computer: 0</p>
 
-        <p id = 'displayComputerMove'></p>
-
-        <button id = 'rock-btn' class = 'moves rock' onclick = 'rock()'>ROCK</button>
-        <button id = 'paper-btn' class = 'moves paper' onclick = 'paper()'>PAPER</button>
-        <button id = 'scissor-btn' class = 'moves scissor'
-        onclick = 'scissor()'>SCISSOR</button>
-
-        <input id = 'userInput' type = 'text' placeholder = 'Your Move'>
-
-        <button id = 'go-btn' onclick = 'startGame()'>GO</button>
-
+        <!-- Reset -->
         <button id = 'reset-btn' onclick = 'resetScore()'>RESET</button>
+    </section>
 
-        <p id = 'displayError' class = 'errorMessage'>Enter a valid move (ROCK, PAPER, or SCISSOR)</p>
-
+    <!-- Win Lose Message -->
+    <section>
         <p id = 'displayWin' class = 'gameResult win'>YOU WIN!</p>
         <p id = 'displayLose' class = 'gameResult lose'>YOU LOSE!</p>
         <p id = 'displayTie' class = 'gameResult tie'>TIE!</p>
+    </section>
 
-        <p id = 'displayPlayerScore'></p>
-        <p id = 'displayComputerScore'></p>
+    <!-- Player -->
+    <section class = 'player-container'>
+
+        <section class = 'character-img'>
+            <img src = 'spongebob.png' alt = 'SpongeBob'>
+        </section>
+
+        <section>
+            <h4>Select or Enter your move:</h4>
+
+            <!-- Move Selection Buttons -->
+            <div class = 'moves-container'>
+                <button id = 'rock-btn' class = 'moves rock' onclick = 'rock()'>ROCK</button>
+                <button id = 'paper-btn' class = 'moves paper' onclick = 'paper()'>PAPER</button>
+                <button id = 'scissor-btn' class = 'moves scissor' onclick = 'scissor()'>SCISSOR</button>
+            </div>
+
+            <!-- Move Input -->
+            <div class = 'input-container'>
+                <div class = 'text-box'>
+                    <input id = 'userInput' class = 'player-input-box' type = 'text' placeholder = 'Enter Your Move'>
+                    <p id = 'displayError' class = 'errorMessage'>Enter a valid move (ROCK, PAPER, or SCISSOR)</p>
+                </div>
+
+                <button id = 'go-btn' onclick = 'startGame()'>GO</button>
+            </div>
+
+        </section>
 
     </section>
+
 </body>
 </html>

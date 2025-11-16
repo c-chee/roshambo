@@ -1,5 +1,16 @@
 body {
-    background-color: lavender;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('kk_cb_bg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
+    align-items: center;
+    place-content: center;
+    font-family: "Lexend Tera", sans-serif;
 }
 
 .gameResult {
@@ -8,4 +19,90 @@ body {
 
 .errorMessage {
     display: none;
+}
+
+.player-container {
+    background-color: rgba(255, 255, 255, 0.583);
+    display: flex;
+    align-items: center;
+    height: 10em;
+    margin: 2em;
+    padding: 5em 2em;
+    border-radius: 8px;
+}
+
+.player-container h4 {
+    margin: 10px 0px;
+}
+
+.character-img img{
+    width: 12em;
+    height: auto;
+    padding-right: 1em;
+}
+
+.moves-container {
+    margin: 5px 0px;
+}
+
+.moves {
+    color: #560061;
+    background-color: #d283ff;
+    font-size: 1.5em;
+    font-family: "Lexend Tera", sans-serif;
+    border: 3px solid #d283ff;
+    border-radius: 8px;
+    padding: 10px 30px;
+    margin: 5px 3px;
+}
+
+.moves:hover {
+    color: #d283ff;
+    background-color: #560061;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.input-container {
+    display: flex;
+    gap: 5px;
+    margin: 5px 4px;
+}
+
+.input-container .errorMessage{
+    font-size: 12px;
+    color: red;
+    width: 455px;
+}
+
+.player-input-box {
+    color: #560061;
+    width: 455px;
+    height: 25px;
+    font-family: "Lexend Tera", sans-serif;
+    border: 2px solid #560061;
+    border-radius: 5px;
+    padding: 0px 25px;
+}
+
+.input-container button{
+    color: #d283ff;
+    background-color: #560061;
+    cursor: pointer;
+    border: 2px solid #560061;
+    border-radius: 5px;
+    width: 60px;
+    height: 30px;
+    font-family: "Lexend Tera", sans-serif;
+    font-weight: 700;
+}
+
+.input-container button:hover{
+    color: #560061;
+    background-color: #d283ff;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    width: 60px;
+    height: 30px;
+    font-family: "Lexend Tera", sans-serif;
 }
