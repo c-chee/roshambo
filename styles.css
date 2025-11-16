@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 2em;
     background-image: url('kk_cb_bg.webp');
     background-repeat: no-repeat;
     background-size: cover;
@@ -104,5 +105,57 @@ body {
     transition: background-color 0.5s ease;
     width: 60px;
     height: 30px;
+    font-family: "Lexend Tera", sans-serif;
+}
+
+.computer-score-container {
+    display: flex;
+    align-items: center;
+    /* gap: 20px; */
+}
+
+.displayComputer {
+    background-color: #1d233b;
+    color: #9ac859;
+    text-shadow: 0 0 5px #a8c67e;
+    border: 2px solid #1d233b;
+    border-radius: 5px;
+    width: 260px;
+    height: 110px;
+    padding: 20px;
+    text-align: center;
+}
+
+.character-img.karen img{
+    width: 12em;
+    height: auto;
+    padding-right: 0;
+}
+
+.score-board {
+    margin-left: 75px;
+    padding: 18px;
+    color: white;
+    background-color: #3a745d;
+    border: 5px solid #d19e6f;
+    border-radius: 2px;
+}
+
+.score-board button{
+    color: white;
+    background-color: #3a745d;
+    cursor: pointer;
+    font-family: "Lexend Tera", sans-serif;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.score-board button:hover{
+    /* color: #; */
+    cursor: pointer;
+    border: 2px solid #162d24;
+    background-color: #162d24;
+    transition: background-color 0.5s ease;
     font-family: "Lexend Tera", sans-serif;
 }

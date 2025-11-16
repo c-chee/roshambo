@@ -18,24 +18,26 @@
     <!-- JS Link -->
     <script src = 'script.js' defer></script>
     
-    <!-- Computer -->
-    <section>
-        <div>
+    <!-- Computer and Score Board-->
+    <section class = 'computer-score-container'>
+        <section class = 'character-img karen'>
+            <img src = 'karen.webp' alt = 'Karen Computer'>
+        </section>
 
-        </div>
+        <section class = 'displayComputer'>
+            <h4 class = 'computer-title'>Computers Move: </h4>
+            <h4 id = 'displayComputerMove' class = 'computerMove'>...</h4>
+        </section>
 
-        <div>
-            <h4 id = 'displayComputerMove' class = 'computerMove'>Computers Move: </h4>
-        </div>
-    </section>
+        <!-- Score Board -->
+        <section class = 'score-board'>
+            <p id = 'displayPlayerScore'>Player: 0</p>
+            <p id = 'displayComputerScore'>Computer: 0</p>
 
-    <!-- Score Board -->
-    <section>
-        <p id = 'displayPlayerScore'>Player: 0</p>
-        <p id = 'displayComputerScore'>Computer: 0</p>
+            <!-- Reset -->
+            <button id = 'reset-btn' onclick = 'resetScore()'>RESET</button>
+        </section>
 
-        <!-- Reset -->
-        <button id = 'reset-btn' onclick = 'resetScore()'>RESET</button>
     </section>
 
     <!-- Win Lose Message -->
@@ -48,7 +50,7 @@
     <!-- Player -->
     <section class = 'player-container'>
 
-        <section class = 'character-img'>
+        <section class = 'character-img spongebob'>
             <img src = 'spongebob.png' alt = 'SpongeBob'>
         </section>
 

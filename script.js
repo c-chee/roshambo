@@ -77,7 +77,7 @@ function logicCondition() {
             (player === 'PAPER' && computer === 'SCISSOR') ||
             (player === 'SCISSOR' && computer === 'ROCK')){
 
-                computerMoveDisplay.innerHTML = `Computers Move: ${computer}`;
+                computerMoveDisplay.innerHTML = `${computer}`;
 
                 loseMessage.style.display = 'block'; // Lose
 
@@ -94,7 +94,7 @@ function logicCondition() {
                  (player === 'PAPER' && computer === 'ROCK') ||
                  (player === 'SCISSOR' && computer === 'PAPER')){
 
-                    computerMoveDisplay.innerHTML = `Computers Move: ${computer}`;
+                    computerMoveDisplay.innerHTML = `${computer}`;
                     
                     winMessage.style.display = 'block'; //Win
 
@@ -109,7 +109,7 @@ function logicCondition() {
         // Else, User and Computer equals
         else {
 
-            computerMoveDisplay.innerHTML = `Computers Move: ${computer}`;
+            computerMoveDisplay.innerHTML = `${computer}`;
 
             tieMessage.style.display = 'block'; //Tie
 
@@ -190,6 +190,13 @@ function resetScore() {
 
     playerScoreDisplay.innerHTML = `Player: ${playerScore}`;
     computerScoreDisplay.innerHTML = `Computer: ${computerScore}`;
+
+    winMessage.style.display = 'none';
+    loseMessage.style.display = 'none';
+    tieMessage.style.display = 'none';
+    errorMessage.style.display = 'none';
+
+    computerMoveDisplay.innerHTML = `...`;
 }
 
 
