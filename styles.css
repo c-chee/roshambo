@@ -253,10 +253,6 @@ main {
         width: 600px;
     }
 
-    .character-img img{
-        /* display: none; */
-    }
-
     .moves-container {
         display: flex;
         flex-direction: column;
