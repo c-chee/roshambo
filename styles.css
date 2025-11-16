@@ -16,6 +16,10 @@ body {
 
 .gameResult {
     display: none;
+    color: #d7ff44;
+    text-shadow: 0 0 10px #162d24;
+    font-size: 30px;
+    font-weight: 500;
 }
 
 .errorMessage {
@@ -159,3 +163,13 @@ body {
     transition: background-color 0.5s ease;
     font-family: "Lexend Tera", sans-serif;
 }
+
+.message-board {
+    width: 500px;
+    height: 200px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
